@@ -32,6 +32,15 @@ public class TestUtil extends TestBase {
 		driver.switchTo().frame("mainpanel");
 	}
 
+	public void switchTolistingFrame() {
+		driver.switchTo().frame("ifrmListing");
+	}
+
+	public void switchToIframeAddProposalFrame() {
+		driver.switchTo().frame("IframeAddProposal");
+	}
+
+
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {

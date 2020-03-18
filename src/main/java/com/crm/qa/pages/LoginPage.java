@@ -10,26 +10,34 @@ import com.crm.qa.base.TestBase;
 public class LoginPage extends TestBase{
 	
 	//Page Factory - OR:
-	@FindBy(name="username")
+	@FindBy(id="txtUN")
 	WebElement username;
 	
-	@FindBy(name="password")
+	@FindBy(id="txtPW")
 	WebElement password;
 	
-	@FindBy(xpath="//input[@type='submit']")
+	@FindBy(id="btnLog")
 	WebElement loginBtn;
 	
 	@FindBy(xpath="//button[contains(text(),'Sign Up')]")
 	WebElement signUpBtn;
 	
-	@FindBy(xpath="//img[contains(@class,'img-responsive')]")
+	@FindBy(xpath="//*[@id='img1']")
 	WebElement crmLogo;
+
+	@FindBy(id="lblDesign")
+	WebElement AuthorityDetails ;
 	
 	//Initializing the Page Objects:
 	public LoginPage(){
 		PageFactory.initElements(driver, this);
 	}
-	
+
+	public String validateAuthority(){
+	String Auttext=	AuthorityDetails.getText();
+		return Auttext;
+	}
+
 	//Actions:
 	public String validateLoginPageTitle(){
 		return driver.getTitle();
